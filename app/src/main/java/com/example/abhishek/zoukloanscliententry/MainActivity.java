@@ -52,12 +52,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "iT7ReC62s1A427l6olxJD7NgTpZhZQg1WWIuTODE", "wmuYJohnOqLzTdvRyvqjqNtMECrDEOg2Sixk7tcp");
-        ParseUser.enableAutomaticUser();
-        ParseACL defaultACL = new ParseACL();
-        ParseACL.setDefaultACL(defaultACL, true);
-
 //        Getting the value of the admin
         SharedPreferences settings = PreferenceManager
                 .getDefaultSharedPreferences(MainActivity.this);
@@ -141,9 +135,11 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 clients.put("isSaved",true);
+                clients.pinInBackground();
                 clients.saveEventually();
                 Intent intent = new Intent(MainActivity.this, DataViewActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         btnSubmit.setEnabled(true);

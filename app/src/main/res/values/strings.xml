@@ -44,7 +44,7 @@
         <item>Transportation Logistics</item>
         <item>Wood and Wood Products</item>
     </string-array>
-    <string name="title_activity_data_view">dataViewActivity</string>
-    <string name="title_activity_starting">StartingActivity</string>
+    <string name="title_activity_data_view">Clients Data</string>
+    <string name="title_activity_starting">Welcome </string>
 
 </resources>

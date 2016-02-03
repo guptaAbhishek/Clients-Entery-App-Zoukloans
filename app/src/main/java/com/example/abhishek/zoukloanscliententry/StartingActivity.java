@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -44,8 +45,9 @@ public class StartingActivity extends AppCompatActivity {
                 SharedPreferences assined_by_user = PreferenceManager.getDefaultSharedPreferences(StartingActivity.this);
                 assined_by_user.edit().putString("assined_by",assined_by).commit();
                 Intent intent = new Intent(StartingActivity.this, DataViewActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-
+                Log.d("Finish", "Could not finish activity");
             }
         });
 
