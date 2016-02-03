@@ -58,7 +58,7 @@ public class StartingActivity extends AppCompatActivity {
 
         admin_users = (Spinner) findViewById(R.id.admin_users);
         List<String> list = new ArrayList<String>();
-        String[] admin_users1 = new String[]{"Ash Narain","Akash Bansal","Rahul Gautam","Prerna Gera","Dr. U.C. Bansal",
+        String[] admin_users1 = new String[]{"Select Your Name","Ash Narain","Akash Bansal","Rahul Gautam","Prerna Gera","Dr. U.C. Bansal",
                 "Tribhuvan Sharma","Harminder Kaur","Abhishek Dubey","Srinjay Velidanda","Vipul Beniwal","Ahmad Khalil",
                 "Bodhayan Prasad","Sagar Sharma","Himani Rastogi","Kumar Pratyush","Rupesh Jhabak","Pooja Chopra","Aditya Walia",
                 "Puneet Bhushan","Asli Singhaar","Kabir Narain","Saurabh Goel","Mohit Gawande","Ishita Maurya",

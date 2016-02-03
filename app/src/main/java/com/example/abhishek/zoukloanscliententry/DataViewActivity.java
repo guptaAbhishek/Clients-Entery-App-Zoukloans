@@ -80,17 +80,21 @@ public class DataViewActivity extends AppCompatActivity {
         dataList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String name = String.valueOf(parent.getItemAtPosition(position));
-
+                final ParseObject obj = (ParseObject)parent.getItemAtPosition(position);
+                final String name = obj.getString("name");
+                Log.d("name from data"," = "+obj.getString("name"));
                 ParseQuery<ParseObject> query1 = ParseQuery.getQuery("Clients");
-                query1.whereEqualTo("name", name);
+                query1.whereEqualTo("name",name);
                 query1.fromLocalDatastore();
                 query1.findInBackground(new FindCallback<ParseObject>() {
                     @Override
                     public void done(List<ParseObject> list, ParseException e) {
                         if (e == null) {
-                            Intent editDetailIntent = new Intent(DataViewActivity.this, MainActivity.class);
+                            Log.d("Profile Data", " = " + list);
+                            Intent editDetailIntent = new Intent(DataViewActivity.this, EditProfileActivity.class);
+                            editDetailIntent.putExtra("objectId",obj.getObjectId());
                             startActivity(editDetailIntent);
+
                         } else {
                             Log.d("Clients Data", "Error " + e.getMessage());
                         }

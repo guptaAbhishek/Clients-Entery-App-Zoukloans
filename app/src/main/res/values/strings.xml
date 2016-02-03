@@ -46,5 +46,6 @@
     </string-array>
     <string name="title_activity_data_view">Clients Data</string>
     <string name="title_activity_starting">Welcome </string>
+    <string name="title_activity_edit_profile">EditProfileActivity</string>
 
 </resources>

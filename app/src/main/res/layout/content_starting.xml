@@ -15,8 +15,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ZoukLoans Clients Entry"
+        android:text="Zouk Clients"
         android:id="@+id/textView"
+        android:textSize="60px"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="#3b0606" />
@@ -37,4 +38,18 @@
         android:layout_below="@+id/admin_users"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="83dp"
+        android:gravity="center_horizontal"
+        android:textSize="40px"
+        android:text="Select your name from the drop down list and press Enter to add New Clients, The data will sync automatically with our server when you have access to the Internet!"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/btnEnter"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
 </RelativeLayout>
