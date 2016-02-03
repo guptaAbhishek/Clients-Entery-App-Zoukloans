@@ -27,7 +27,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private Spinner business_type;
     private String assinged_by;
     private String objectId;
-    private ParseObject parseObject;
+    private ParseObject parseObject = new ParseObject("Clients");
 
 
     @Override
@@ -61,60 +61,66 @@ public class EditProfileActivity extends AppCompatActivity {
                 if (e == null) {
                     Log.d("Clients Data", "Retrieved " + scoreList);
                     parseObject = scoreList.get(0);
+                    Log.d("xyz", " = " + parseObject);
                 } else {
                     Log.d("Clients Data", "Error: " + e.getMessage());
                 }
             }
         });
 
-        if(parseObject !=null){
-            if(parseObject.getString("name").toString() != null){
-                client_name.setText(parseObject.get("name").toString());
-            }else{
-                client_name.setText("");
-            }
+            if(parseObject !=null){
+                if(parseObject.getString("name") != null){
+                    Log.d("Client name","="+parseObject.getString("name").toString());
+                    client_name.setText(parseObject.get("name").toString());
+                }else{
+                    client_name.setText("");
+                }
 
 
-            if(parseObject.getString("phone").toString() != null){
-                mobile_num.setText(parseObject.get("phone").toString());
-            }else{
-                mobile_num.setText("");
-            }
+                if(parseObject.getString("phone") != null){
+                    mobile_num.setText(parseObject.get("phone").toString());
+                }else{
+                    mobile_num.setText("");
+                }
 
-            if(parseObject.getString("pan").toString() != null){
-                client_pan.setText(parseObject.get("pan").toString());
-            }else{
-                client_pan.setText("");
-            }
+                if(parseObject.getString("pan") != null){
+                    client_pan.setText(parseObject.get("pan").toString());
+                }else{
+                    client_pan.setText("");
+                }
 
-            if(parseObject.getString("email").toString() != null){
-                client_email.setText(parseObject.get("email").toString());
-            }else{
-                client_email.setText("");
-            }
-            if(parseObject.getString("company_name").toString() != null){
-                company_name.setText(parseObject.get("company_name").toString());
-            }else{
-                company_name.setText("");
-            }
-            if(parseObject.getString("business_type").toString() != null){
+                if(parseObject.getString("email") != null){
+                    client_email.setText(parseObject.get("email").toString());
+                }else{
+                    client_email.setText("");
+                }
+                if(parseObject.getString("company_name") != null){
+                    company_name.setText(parseObject.get("company_name").toString());
+                }else{
+                    company_name.setText("");
+                }
+                if(parseObject.getString("business_type") != null){
 //                business_type.setSelection(parseObject.get("business_type").toString());
-            }else{
+                }else{
 //                client_name.setText("");
+                }
+
+                if(parseObject.getString("loan_amount") != null){
+                    client_name.setText(parseObject.get("loan_amount").toString());
+                }else{
+                    client_name.setText("");
+                }
+
+                if(parseObject.getString("about") != null){
+                    client_name.setText(parseObject.get("about").toString());
+                }else{
+                    client_name.setText("");
+                }
+            }else{
+                Log.d("Pobj"," = "+ parseObject);
             }
 
-            if(parseObject.getString("loan_amount").toString() != null){
-                client_name.setText(parseObject.get("loan_amount").toString());
-            }else{
-                client_name.setText("");
-            }
 
-            if(parseObject.getString("about").toString() != null){
-                client_name.setText(parseObject.get("about").toString());
-            }else{
-                client_name.setText("");
-            }
-        }
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,6 +188,8 @@ public class EditProfileActivity extends AppCompatActivity {
                         if (e == null) {
                             clients.saveInBackground();
                             clients.saveEventually();
+                        }else{
+                            Log.d("Clients Data", "Error: " + e.getMessage());
                         }
                     }
                 });
@@ -191,7 +199,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 finish();
             }
         });
-        
+
     }
 
 }
