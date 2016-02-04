@@ -47,5 +47,7 @@
     <string name="title_activity_data_view">Clients Data</string>
     <string name="title_activity_starting">Welcome </string>
     <string name="title_activity_edit_profile">EditProfileActivity</string>
+    <string name="title_activity_google_auth">GoogleAuthActivity</string>
+    <string name="title_activity_folder_view">FolderViewActivity</string>
 
 </resources>
