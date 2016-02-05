@@ -12,11 +12,17 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.abhishek.zoukloanscliententry.FolderViewActivity"
     tools:showIn="@layout/activity_folder_view">
+    <ImageView
+        android:src="@drawable/blank"
+        android:id="@+id/blankImageFolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <LinearLayout
         android:weightSum="1"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <FrameLayout
             android:layout_weight=".8"
             android:layout_width="match_parent"

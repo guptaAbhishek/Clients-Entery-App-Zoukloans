@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.parse.FindCallback;
@@ -32,7 +33,7 @@ public class FolderViewActivity extends AppCompatActivity {
     private String[] folderNameData;
     private ArrayAdapter<String> adapter;
     private ArrayList<ParseObject> folderList = new ArrayList<ParseObject>();
-
+    private ImageView blankImageFolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class FolderViewActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        blankImageFolder = (ImageView) findViewById(R.id.blankImageFolder);
         folderListView = (ListView) findViewById(R.id.folderListView);
         btnAddDeals = (Button) findViewById(R.id.addDeals);
         btnAddEvents = (Button) findViewById(R.id.addEvents);
@@ -58,8 +59,9 @@ public class FolderViewActivity extends AppCompatActivity {
                         for (int i = 0; i < scoreList.size(); i++) {
                             folderList.add(scoreList.get(i));
                         }
+                        blankImageFolder.setVisibility(View.GONE);
                     }else{
-
+                        blankImageFolder.setVisibility(View.VISIBLE);
                     }
 
                     FolderAdapter folderAdapter = new FolderAdapter(getApplicationContext(), folderList);

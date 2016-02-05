@@ -33,10 +33,16 @@ public class ParseAdapter extends ArrayAdapter<ParseObject> {
         // Lookup view for data population
         TextView tvName = (TextView) convertView.findViewById(R.id.tvName);
         TextView phone = (TextView) convertView.findViewById(R.id.phone);
+        TextView loan_amount = (TextView) convertView.findViewById(R.id.loan_amount);
         // Populate the data into the template view using the data object
         if(user!=null){
             tvName.setText(user.getString("company_name"));
             phone.setText(user.getString("phone"));
+            if(user.getString("loan_amount") !=null){
+                loan_amount.setText("Rs. "+user.getString("loan_amount"));
+            }else{
+                loan_amount.setText("Rs.0");
+            }
         }
 
         // Return the completed view to render on screen
