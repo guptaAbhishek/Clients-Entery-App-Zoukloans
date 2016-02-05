@@ -50,8 +50,12 @@ public class FolderViewActivity extends AppCompatActivity {
                              ParseException e) {
                 if (e == null) {
                     Log.d("Folder Data", "Retrieved " + scoreList);
-                    for (int i = 0; i < scoreList.size(); i++) {
-                        folderList.add(scoreList.get(i));
+                    if(scoreList.size() != 0){
+                        for (int i = 0; i < scoreList.size(); i++) {
+                            folderList.add(scoreList.get(i));
+                        }
+                    }else{
+
                     }
 
                     FolderAdapter folderAdapter = new FolderAdapter(getApplicationContext(), folderList);
@@ -75,7 +79,7 @@ public class FolderViewActivity extends AppCompatActivity {
         btnAddEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent addFolderNameIntent = new Intent(FolderViewActivity.this,AddFolderNameActivity.class);
+                Intent addFolderNameIntent = new Intent(FolderViewActivity.this, AddFolderNameActivity.class);
                 startActivity(addFolderNameIntent);
             }
         });
@@ -85,8 +89,9 @@ public class FolderViewActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final ParseObject obj = (ParseObject) parent.getItemAtPosition(position);
                 String eventName = obj.getString("eventName");
-                Intent folderNameListViewIntent = new Intent(FolderViewActivity.this,DataViewActivity.class);
-                folderNameListViewIntent.putExtra("eventName",eventName);
+                Log.d("eventName"," = "+eventName);
+                Intent folderNameListViewIntent = new Intent(FolderViewActivity.this, DataViewActivity.class);
+                folderNameListViewIntent.putExtra("eventName", eventName);
                 startActivity(folderNameListViewIntent);
             }
         });

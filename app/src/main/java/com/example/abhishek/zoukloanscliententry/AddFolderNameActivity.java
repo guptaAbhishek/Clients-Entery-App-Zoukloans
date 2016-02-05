@@ -39,7 +39,7 @@ public class AddFolderNameActivity extends AppCompatActivity {
                     events.put("eventName", "Unknown");
                 }
                 events.put("isSaved",true);
-                events.saveInBackground();
+                events.pinInBackground();
                 events.saveEventually();
                 Intent folderViewActivity = new Intent(AddFolderNameActivity.this,FolderViewActivity.class);
                 startActivity(folderViewActivity);

@@ -36,6 +36,8 @@ public class DataViewActivity extends AppCompatActivity {
     private String[] data;
     private ArrayAdapter<String> adapter;
     private ArrayList<ParseObject> list1 = new ArrayList<ParseObject>();
+    private String eventName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,10 @@ public class DataViewActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Intent eventNameIntnet = getIntent();
+        eventName = eventNameIntnet.getExtras().getString("eventName");
+        Log.d("Event Name"," = "+eventName);
 //
 //        SharedPreferences pref = getSharedPreferences("ActivityPREF", Context.MODE_PRIVATE);
 //        if(pref.getBoolean("activity_executed", false)){
@@ -57,7 +63,7 @@ public class DataViewActivity extends AppCompatActivity {
         dataList = (ListView) findViewById(R.id.listView);
 
         final ParseQuery<ParseObject> query = ParseQuery.getQuery("Clients");
-        query.whereEqualTo("isSaved", true);
+        query.whereEqualTo("eventName", eventName);
         query.fromLocalDatastore();
         query.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> scoreList,
@@ -108,6 +114,7 @@ public class DataViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DataViewActivity.this, MainActivity.class);
+                intent.putExtra("eventName",eventName);
                 startActivity(intent);
                 finish();
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

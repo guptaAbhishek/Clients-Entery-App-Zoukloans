@@ -46,10 +46,10 @@
     </string-array>
     <string name="title_activity_data_view">Clients Data</string>
     <string name="title_activity_starting">Welcome </string>
-    <string name="title_activity_edit_profile">EditProfileActivity</string>
+    <string name="title_activity_edit_profile">Edit Client</string>
     <string name="title_activity_google_auth">GoogleAuthActivity</string>
-    <string name="title_activity_folder_view">FolderViewActivity</string>
-    <string name="title_activity_add_folder_name">AddFolderNameActivity</string>
-    <string name="title_activity_detail_view">DetailViewActivity</string>
+    <string name="title_activity_folder_view">Events</string>
+    <string name="title_activity_add_folder_name">Add Events</string>
+    <string name="title_activity_detail_view">Details</string>
 
 </resources>

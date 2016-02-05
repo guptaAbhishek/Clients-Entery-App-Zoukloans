@@ -26,19 +26,15 @@
             android:value="wmuYJohnOqLzTdvRyvqjqNtMECrDEOg2Sixk7tcp" />
 
         <activity
-            android:name=".DataViewActivity"
-            android:label="@string/title_activity_data_view"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".StartingActivity"
             android:label="@string/title_activity_starting"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DataViewActivity"
+            android:label="Clients Data"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".EditProfileActivity"
             android:label="@string/title_activity_edit_profile"
@@ -50,7 +46,13 @@
         <activity
             android:name=".FolderViewActivity"
             android:label="@string/title_activity_folder_view"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            </activity>
         <activity
             android:name=".AddFolderNameActivity"
             android:label="@string/title_activity_add_folder_name"

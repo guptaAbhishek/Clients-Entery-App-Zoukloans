@@ -45,12 +45,17 @@ public class MainActivity extends AppCompatActivity {
     private TextView client_name,mobile_num,client_email,client_pan,company_name,loan_amount,about;
     private Spinner business_type;
     private String assinged_by;
+    private String eventName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final Intent eventNameIntnet = getIntent();
+        eventName = eventNameIntnet.getExtras().getString("eventName");
+        Log.d("Event Name", " = " + eventName);
 
 //        Getting the value of the admin
         SharedPreferences settings = PreferenceManager
@@ -135,10 +140,12 @@ public class MainActivity extends AppCompatActivity {
                     clients.put("about","");
                 }
 
-                clients.put("isSaved",true);
+                clients.put("eventName",eventName);
+                clients.put("isSaved", true);
                 clients.pinInBackground();
                 clients.saveEventually();
                 Intent intent = new Intent(MainActivity.this, DataViewActivity.class);
+                intent.putExtra("eventName",eventName);
                 startActivity(intent);
                 finish();
             }
