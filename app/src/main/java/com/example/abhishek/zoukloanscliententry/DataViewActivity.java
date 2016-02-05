@@ -99,6 +99,7 @@ public class DataViewActivity extends AppCompatActivity {
                             Log.d("Profile Data", " = " + list);
                             Intent editDetailIntent = new Intent(DataViewActivity.this, DetailViewActivity.class);
                             editDetailIntent.putExtra("objectId",obj.getObjectId());
+                            editDetailIntent.putExtra("eventName",eventName);
                             startActivity(editDetailIntent);
 
                         } else {

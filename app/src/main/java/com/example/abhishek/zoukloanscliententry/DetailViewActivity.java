@@ -25,7 +25,7 @@ public class DetailViewActivity extends AppCompatActivity {
 
     private TextView eventNameTxt,clientNameTxt,phoneClient,
     emailClient,panClient,companyName,industryName,aboutClient,loanAmount;
-    String objectId;
+    String objectId,eventName;
     private ArrayList<ParseObject> list1 = new ArrayList<ParseObject>();
 
     @Override
@@ -37,6 +37,7 @@ public class DetailViewActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         objectId = intent.getExtras().getString("objectId");
+        eventName = intent.getExtras().getString("eventName");
         Log.d("Object Id", " = " + objectId);
 
 
@@ -124,6 +125,7 @@ public class DetailViewActivity extends AppCompatActivity {
 //                Open Edit Profile Acitivity
                 Intent editDataIntent = new Intent(DetailViewActivity.this, EditProfileActivity.class);
                 editDataIntent.putExtra("objectId", objectId);
+                editDataIntent.putExtra("eventName",eventName);
                 startActivity(editDataIntent);
             }
         });
