@@ -50,5 +50,6 @@
     <string name="title_activity_google_auth">GoogleAuthActivity</string>
     <string name="title_activity_folder_view">FolderViewActivity</string>
     <string name="title_activity_add_folder_name">AddFolderNameActivity</string>
+    <string name="title_activity_detail_view">DetailViewActivity</string>
 
 </resources>

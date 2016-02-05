@@ -91,7 +91,7 @@ public class DataViewActivity extends AppCompatActivity {
                     public void done(List<ParseObject> list, ParseException e) {
                         if (e == null) {
                             Log.d("Profile Data", " = " + list);
-                            Intent editDetailIntent = new Intent(DataViewActivity.this, EditProfileActivity.class);
+                            Intent editDetailIntent = new Intent(DataViewActivity.this, DetailViewActivity.class);
                             editDetailIntent.putExtra("objectId",obj.getObjectId());
                             startActivity(editDetailIntent);
 

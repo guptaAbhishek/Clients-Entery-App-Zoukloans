@@ -6,6 +6,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebView;
 
 public class GoogleAuthActivity extends AppCompatActivity {
 
@@ -15,6 +17,8 @@ public class GoogleAuthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_google_auth);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        WebView webView = (WebView)findViewById(R.id.webView);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -26,6 +30,8 @@ public class GoogleAuthActivity extends AppCompatActivity {
         });
 
         
+        
     }
 
 }
+
