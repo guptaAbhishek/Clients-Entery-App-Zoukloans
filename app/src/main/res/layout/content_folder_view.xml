@@ -11,5 +11,48 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.abhishek.zoukloanscliententry.FolderViewActivity"
     tools:showIn="@layout/activity_folder_view">
+    <LinearLayout
+        android:weightSum="1"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:layout_weight=".8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ListView
+                android:id="@+id/folderListView"
+                android:layout_width="match_parent"
+                android:layout_height="429dp"></ListView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_weight=".2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:id="@+id/linearLayout3"
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:weightSum="1">
+                <Button
+                    android:layout_weight=".5"
+                    android:id="@+id/addEvents"
+                    android:text="Add Events"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:layout_weight=".5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Deals"
+                    android:id="@+id/addDeals" />
+
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
 
 </RelativeLayout>

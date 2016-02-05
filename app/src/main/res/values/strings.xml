@@ -49,5 +49,6 @@
     <string name="title_activity_edit_profile">EditProfileActivity</string>
     <string name="title_activity_google_auth">GoogleAuthActivity</string>
     <string name="title_activity_folder_view">FolderViewActivity</string>
+    <string name="title_activity_add_folder_name">AddFolderNameActivity</string>
 
 </resources>
