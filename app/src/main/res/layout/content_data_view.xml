@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#effafd"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".DataViewActivity"
     tools:showIn="@layout/activity_data_view">
@@ -19,4 +20,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+    <ImageView
+        android:src="@drawable/blank"
+        android:id="@+id/blankImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </RelativeLayout>

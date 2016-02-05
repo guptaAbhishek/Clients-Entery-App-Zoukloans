@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import com.parse.Parse;
 import com.parse.ParseACL;
@@ -37,6 +38,7 @@ public class DataViewActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private ArrayList<ParseObject> list1 = new ArrayList<ParseObject>();
     private String eventName;
+    private ImageView blankView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,7 @@ public class DataViewActivity extends AppCompatActivity {
 //        }
 
         dataList = (ListView) findViewById(R.id.listView);
+        blankView = (ImageView) findViewById(R.id.blankImage);
 
         final ParseQuery<ParseObject> query = ParseQuery.getQuery("Clients");
         query.whereEqualTo("eventName", eventName);
@@ -70,9 +73,16 @@ public class DataViewActivity extends AppCompatActivity {
                              ParseException e) {
                 if (e == null) {
                     Log.d("Clients Data", "Retrieved " + scoreList);
-                    for (int i = 0; i < scoreList.size(); i++) {
-                        list1.add(scoreList.get(i));
+                    if (scoreList.size() > 0) {
+                        for (int i = 0; i < scoreList.size(); i++) {
+                            list1.add(scoreList.get(i));
+                        }
+                        blankView.setVisibility(View.GONE);
+
+                    } else {
+                        blankView.setVisibility(View.VISIBLE);
                     }
+
 
                     ParseAdapter adapter1 = new ParseAdapter(getApplicationContext(), list1);
                     Log.d("Clients Data", "list data " + list1);
@@ -86,11 +96,11 @@ public class DataViewActivity extends AppCompatActivity {
         dataList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                final ParseObject obj = (ParseObject)parent.getItemAtPosition(position);
+                final ParseObject obj = (ParseObject) parent.getItemAtPosition(position);
                 final String name = obj.getString("name");
-                Log.d("name from data"," = "+obj.getString("name"));
+                Log.d("name from data", " = " + obj.getString("name"));
                 ParseQuery<ParseObject> query1 = ParseQuery.getQuery("Clients");
-                query1.whereEqualTo("name",name);
+                query1.whereEqualTo("name", name);
                 query1.fromLocalDatastore();
                 query1.findInBackground(new FindCallback<ParseObject>() {
                     @Override
@@ -98,8 +108,8 @@ public class DataViewActivity extends AppCompatActivity {
                         if (e == null) {
                             Log.d("Profile Data", " = " + list);
                             Intent editDetailIntent = new Intent(DataViewActivity.this, DetailViewActivity.class);
-                            editDetailIntent.putExtra("objectId",obj.getObjectId());
-                            editDetailIntent.putExtra("eventName",eventName);
+                            editDetailIntent.putExtra("objectId", obj.getObjectId());
+                            editDetailIntent.putExtra("eventName", eventName);
                             startActivity(editDetailIntent);
 
                         } else {
@@ -115,7 +125,7 @@ public class DataViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DataViewActivity.this, MainActivity.class);
-                intent.putExtra("eventName",eventName);
+                intent.putExtra("eventName", eventName);
                 startActivity(intent);
                 finish();
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

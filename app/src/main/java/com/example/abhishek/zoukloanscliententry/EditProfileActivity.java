@@ -172,7 +172,6 @@ public class EditProfileActivity extends AppCompatActivity {
                                 @Override
                                 public void done(ParseObject parseObject, ParseException e) {
                                     if (e == null) {
-                                        
                                         clients.saveInBackground();
                                         clients.saveEventually();
                                     } else {

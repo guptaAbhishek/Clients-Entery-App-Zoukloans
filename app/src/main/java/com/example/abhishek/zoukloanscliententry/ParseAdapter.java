@@ -35,7 +35,7 @@ public class ParseAdapter extends ArrayAdapter<ParseObject> {
         TextView phone = (TextView) convertView.findViewById(R.id.phone);
         // Populate the data into the template view using the data object
         if(user!=null){
-            tvName.setText(user.getString("name"));
+            tvName.setText(user.getString("company_name"));
             phone.setText(user.getString("phone"));
         }
 

@@ -48,7 +48,7 @@
     <string name="title_activity_starting">Welcome </string>
     <string name="title_activity_edit_profile">Edit Client</string>
     <string name="title_activity_google_auth">GoogleAuthActivity</string>
-    <string name="title_activity_folder_view">Events</string>
+    <string name="title_activity_folder_view">Zouk Events</string>
     <string name="title_activity_add_folder_name">Add Events</string>
     <string name="title_activity_detail_view">Details</string>
 
