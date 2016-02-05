@@ -60,8 +60,8 @@ public class DetailViewActivity extends AppCompatActivity {
                 if (e == null) {
                     Log.d("Clients Data", "Retrieved " + scoreList);
                     if (scoreList.get(0) != null) {
-                        if (scoreList.get(0).getString("event") != null) {
-                            eventNameTxt.setText(scoreList.get(0).getString("event"));
+                        if (scoreList.get(0).getString("eventName") != null) {
+                            eventNameTxt.setText(scoreList.get(0).getString("eventName"));
                         } else {
                             eventNameTxt.setText("");
                         }

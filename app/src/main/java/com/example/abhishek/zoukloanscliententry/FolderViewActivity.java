@@ -41,7 +41,7 @@ public class FolderViewActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        
+
         folderListView = (ListView) findViewById(R.id.folderListView);
         btnAddDeals = (Button) findViewById(R.id.addDeals);
         btnAddEvents = (Button) findViewById(R.id.addEvents);

@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
 
@@ -14,7 +15,7 @@ import com.parse.ParseObject;
 
 public class AddFolderNameActivity extends AppCompatActivity {
 
-    private TextView eventName;
+    private EditText eventName;
     private Button btnAddEventName;
     private String eventNameStr;
 
@@ -26,7 +27,7 @@ public class AddFolderNameActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        eventName = (TextView) findViewById(R.id.eventName);
+        eventName = (EditText) findViewById(R.id.eventName);
         btnAddEventName = (Button) findViewById(R.id.addEvents);
 
         btnAddEventName.setOnClickListener(new View.OnClickListener() {

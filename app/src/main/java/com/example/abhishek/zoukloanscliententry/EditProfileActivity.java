@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.util.Log;
@@ -23,7 +24,7 @@ import java.util.List;
 public class EditProfileActivity extends AppCompatActivity {
 
     private Button btnSubmit;
-    private TextView client_name,mobile_num,client_email,client_pan,company_name,loan_amount,about;
+    private EditText client_name,mobile_num,client_email,client_pan,company_name,loan_amount,about;
     private Spinner business_type;
     private String assinged_by;
     private String objectId;
@@ -38,13 +39,13 @@ public class EditProfileActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
-        client_name = (TextView) findViewById(R.id.editText);
-        mobile_num = (TextView) findViewById(R.id.editText2);
-        client_email = (TextView) findViewById(R.id.editText3);
-        client_pan = (TextView) findViewById(R.id.editText4);
-        company_name = (TextView) findViewById(R.id.editText5);
-        loan_amount = (TextView) findViewById(R.id.editText7);
-        about = (TextView) findViewById(R.id.editText8);
+        client_name = (EditText) findViewById(R.id.editText);
+        mobile_num = (EditText) findViewById(R.id.editText2);
+        client_email = (EditText) findViewById(R.id.editText3);
+        client_pan = (EditText) findViewById(R.id.editText4);
+        company_name = (EditText) findViewById(R.id.editText5);
+        loan_amount = (EditText) findViewById(R.id.editText7);
+        about = (EditText) findViewById(R.id.editText8);
         business_type = (Spinner) findViewById(R.id.editText6);
 
         // Receiving
