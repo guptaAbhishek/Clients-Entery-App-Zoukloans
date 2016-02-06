@@ -51,5 +51,7 @@
     <string name="title_activity_folder_view">Zouk Events</string>
     <string name="title_activity_add_folder_name">Add Events</string>
     <string name="title_activity_detail_view">Details</string>
+    <string name="parse_app_id">iT7ReC62s1A427l6olxJD7NgTpZhZQg1WWIuTODE</string>
+    <string name="parse_client_id">wmuYJohnOqLzTdvRyvqjqNtMECrDEOg2Sixk7tcp</string>
 
 </resources>

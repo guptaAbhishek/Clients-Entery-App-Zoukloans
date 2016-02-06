@@ -14,7 +14,7 @@ public class ParseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "iT7ReC62s1A427l6olxJD7NgTpZhZQg1WWIuTODE", "wmuYJohnOqLzTdvRyvqjqNtMECrDEOg2Sixk7tcp");
+        Parse.initialize(this, getString(R.string.parse_app_id), getString(R.string.parse_client_id));
         ParseUser.enableAutomaticUser();
         ParseACL defaultACL = new ParseACL();
         ParseACL.setDefaultACL(defaultACL, true);
