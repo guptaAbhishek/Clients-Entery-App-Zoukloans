@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.parse.ParseObject;
 
@@ -34,22 +35,32 @@ public class AddFolderNameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ParseObject events = new ParseObject("Events");
-                if(eventName.getText().toString() != null){
-                    events.put("eventName",eventName.getText().toString());
-                }else {
-                    events.put("eventName", "Unknown");
+                if(checkValidation()){
+                    if(eventName.getText().toString() != null){
+                        events.put("eventName",eventName.getText().toString());
+                    }else {
+                        events.put("eventName", "Unknown");
+                    }
+                    events.put("isSaved",true);
+                    events.pinInBackground();
+                    events.saveEventually();
+                    Intent folderViewActivity = new Intent(AddFolderNameActivity.this,FolderViewActivity.class);
+                    startActivity(folderViewActivity);
+                    finish();
+                }else{
+                    Toast.makeText(AddFolderNameActivity.this,"Please Enter the Event Name",Toast.LENGTH_LONG).show();
                 }
-                events.put("isSaved",true);
-                events.pinInBackground();
-                events.saveEventually();
-                Intent folderViewActivity = new Intent(AddFolderNameActivity.this,FolderViewActivity.class);
-                startActivity(folderViewActivity);
-                finish();
+
             }
         });
 
 
+    }
 
+    private boolean checkValidation() {
+        boolean ret = true;
+        if (!Validation.hasText(eventName)) ret = false;
+        return ret;
     }
 
 }

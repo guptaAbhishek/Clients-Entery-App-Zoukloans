@@ -66,7 +66,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true" />
         <TextView
-            android:background="@color/colorAccent"
             android:layout_gravity="right"
             android:id="@+id/loan_amount"
             android:padding="8dp"

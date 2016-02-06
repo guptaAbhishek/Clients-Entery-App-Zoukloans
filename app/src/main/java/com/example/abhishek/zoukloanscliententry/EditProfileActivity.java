@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -19,6 +20,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EditProfileActivity extends AppCompatActivity {
@@ -48,6 +50,7 @@ public class EditProfileActivity extends AppCompatActivity {
         about = (EditText) findViewById(R.id.about);
         business_type = (Spinner) findViewById(R.id.business_type);
 
+        addItemsOnSpinner2();
         // Receiving
         Intent intent = getIntent();
         objectId = intent.getExtras().getString("objectId");
@@ -92,6 +95,8 @@ public class EditProfileActivity extends AppCompatActivity {
                         company_name.setText("");
                     }
                     if (scoreList.get(0).getString("business_type") != null) {
+                        String industry = scoreList.get(0).getString("business_type");
+
 //                business_type.setSelection(scoreList.getString("business_type"));
                     } else {
 //                client_name.setText("");
@@ -199,6 +204,31 @@ public class EditProfileActivity extends AppCompatActivity {
 
 
 
+    }
+
+    // add items into spinner dynamically
+    public void addItemsOnSpinner2() {
+
+        business_type = (Spinner) findViewById(R.id.business_type);
+        List<String> list = new ArrayList<String>();
+        String[] business_type1 = new String[]{"Select Industry Type","Agriculture","ACs and Refrigerators","Automobiles","Books, Office Supplies Stationery",
+                "Cement","Chemicals","Computers","Construction","Consumer Electronics","Containers and Packaging",
+                "Durables","Electronics","Entertainment and Leisure","Financial Services","Food and Beverages","Food Processing","Food Products",
+                "Glass and Glass Products","Granite / Marbles","Healthcare","Home Furniture and Furnishing","Household Products","Industrial Equipment",
+                "Jewellery","Luggage and Leather Goods","Media","Metals","Paints","Paper","Petroleum Products","Photographic and Allied Products",
+                "Plastics","Professional Services","Rubber","Specialty (Clock, Watches, Footwear, Toys and Games, Optical Instruments, Sports Goods)",
+                "Television broadcasting media","Textiles","Transportation Logistics","Wood and Wood Products"};
+
+        for(int i=0;i<business_type1.length;i++){
+            list.add(business_type1[i]);
+        }
+
+
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        business_type.setAdapter(dataAdapter);
     }
 
 }

@@ -136,6 +136,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mobile_num.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                Validation.isPhoneNumber(mobile_num,true);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
 
 
         btnSubmit.setOnClickListener(new View.OnClickListener(){
@@ -316,7 +333,7 @@ public class MainActivity extends AppCompatActivity {
         boolean ret = true;
 
         if (!Validation.hasText(client_name)) ret = false;
-        if (!Validation.isEmailAddress(client_email, false)) ret = false;
+        if (!Validation.isEmailAddress(client_email, true)) ret = false;
         if (!Validation.isPhoneNumber(mobile_num, true)) ret = false;
 
         return ret;

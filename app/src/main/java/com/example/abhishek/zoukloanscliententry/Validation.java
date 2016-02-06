@@ -17,7 +17,7 @@ public class Validation {
     // Error Messages
     private static final String REQUIRED_MSG = "Required";
     private static final String EMAIL_MSG = "Invalid Email";
-    private static final String PHONE_MSG = "##########";
+    private static final String PHONE_MSG = "Enter Ten Digit";
 
     // call this method when you need to check email validation
     public static boolean isEmailAddress(EditText editText, boolean required) {

@@ -54,4 +54,8 @@
     <string name="parse_app_id">iT7ReC62s1A427l6olxJD7NgTpZhZQg1WWIuTODE</string>
     <string name="parse_client_id">wmuYJohnOqLzTdvRyvqjqNtMECrDEOg2Sixk7tcp</string>
 
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
 </resources>

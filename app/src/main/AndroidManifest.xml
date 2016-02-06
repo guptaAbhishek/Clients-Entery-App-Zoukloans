@@ -32,9 +32,7 @@
         <activity
             android:name=".DataViewActivity"
             android:label="Clients Data"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EditProfileActivity"
             android:label="@string/title_activity_edit_profile"
@@ -52,16 +50,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            </activity>
+        </activity>
         <activity
             android:name=".AddFolderNameActivity"
             android:label="@string/title_activity_add_folder_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:parentActivityName=".DataViewActivity"
             android:name=".DetailViewActivity"
             android:label="@string/title_activity_detail_view"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName=".DataViewActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
