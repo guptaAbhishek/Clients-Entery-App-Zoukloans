@@ -10,12 +10,15 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import android.widget.TextView;
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Button btnSubmit;
-    private TextView client_name,mobile_num,client_email,client_pan,company_name,loan_amount,about;
+    private EditText client_name,mobile_num,client_email,client_pan,company_name,loan_amount,about;
     private Spinner business_type;
     private String assinged_by;
     private String eventName;
@@ -61,16 +64,16 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences settings = PreferenceManager
                 .getDefaultSharedPreferences(MainActivity.this);
         assinged_by=settings.getString("assined_by","");
-
-
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
-        client_name = (TextView) findViewById(R.id.editText);
-        mobile_num = (TextView) findViewById(R.id.editText2);
-        client_email = (TextView) findViewById(R.id.editText3);
-        client_pan = (TextView) findViewById(R.id.editText4);
-        company_name = (TextView) findViewById(R.id.editText5);
-        loan_amount = (TextView) findViewById(R.id.editText7);
-        about = (TextView) findViewById(R.id.editText8);
+
+        client_name = (EditText) findViewById(R.id.client_name);
+        mobile_num = (EditText) findViewById(R.id.mobile_num);
+        client_email = (EditText) findViewById(R.id.client_email);
+        client_pan = (EditText) findViewById(R.id.client_pan);
+        company_name = (EditText) findViewById(R.id.company_name);
+        loan_amount = (EditText) findViewById(R.id.loan_amount);
+        about = (EditText) findViewById(R.id.about);
+
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -78,6 +81,60 @@ public class MainActivity extends AppCompatActivity {
 
         addItemsOnSpinner2();
 
+        // Validation
+        //Client Name Validation
+
+        client_name.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                Validation.hasText(client_name);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        // Client Email Validation
+        client_email.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                Validation.isEmailAddress(client_email, true);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        company_name.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                Validation.hasText(company_name);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
 
@@ -85,69 +142,73 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ParseObject clients = new ParseObject("Clients");
+                if(checkValidation()){
+                    if(assinged_by !=null){
+                        clients.put("assined_by",assinged_by);
+                    }else{
+                        clients.put("assined_by","Something Broke");
+                    }
 
-                if(assinged_by !=null){
-                    clients.put("assined_by",assinged_by);
+                    if(client_name.getText().toString() !=null){
+                        clients.put("name",client_name.getText().toString());
+                    }else{
+                        clients.put("name","");
+                    }
+
+                    if(mobile_num.getText().toString() !=null){
+                        clients.put("phone",mobile_num.getText().toString());
+                    }else{
+                        clients.put("phone","");
+                    }
+
+                    if(client_pan.getText().toString() !=null){
+                        clients.put("pan",client_pan.getText().toString());
+                    }else{
+                        clients.put("pan","");
+                    }
+
+                    if(client_email.getText().toString() !=null){
+                        clients.put("email",client_email.getText().toString());
+                    }else{
+                        clients.put("email","");
+                    }
+
+                    if(company_name.getText().toString() !=null){
+                        clients.put("company_name",company_name.getText().toString());
+                    }else{
+                        clients.put("company_name","");
+                    }
+
+                    if(business_type.getSelectedItem().toString() != null){
+                        clients.put("business_type",business_type.getSelectedItem().toString());
+                    }else{
+                        clients.put("business_type","");
+                    }
+
+                    if(loan_amount.getText().toString() != null){
+                        clients.put("loan_amount",loan_amount.getText().toString());
+                    }else{
+                        clients.put("loan_amount","");
+                    }
+
+                    if(about.getText().toString() !=null){
+                        clients.put("about",about.getText().toString());
+                    }else{
+                        clients.put("about","");
+                    }
+
+                    clients.put("eventName",eventName);
+                    clients.put("isSaved", true);
+                    clients.pinInBackground();
+                    clients.saveEventually();
+                    Intent intent = new Intent(MainActivity.this, DataViewActivity.class);
+                    intent.putExtra("eventName",eventName);
+                    startActivity(intent);
+                    finish();
                 }else{
-                    clients.put("assined_by","Something Broke");
+                    Toast.makeText(MainActivity.this,"Please enter required field",Toast.LENGTH_LONG).show();
                 }
 
-                if(client_name.getText().toString() !=null){
-                    clients.put("name",client_name.getText().toString());
-                }else{
-                    clients.put("name","");
-                }
-
-                if(mobile_num.getText().toString() !=null){
-                    clients.put("phone",mobile_num.getText().toString());
-                }else{
-                    clients.put("phone","");
-                }
-
-                if(client_pan.getText().toString() !=null){
-                    clients.put("pan",client_pan.getText().toString());
-                }else{
-                    clients.put("pan","");
-                }
-
-                if(client_email.getText().toString() !=null){
-                    clients.put("email",client_email.getText().toString());
-                }else{
-                    clients.put("email","");
-                }
-
-                if(company_name.getText().toString() !=null){
-                    clients.put("company_name",company_name.getText().toString());
-                }else{
-                    clients.put("company_name","");
-                }
-
-                if(business_type.getSelectedItem().toString() != null){
-                    clients.put("business_type",business_type.getSelectedItem().toString());
-                }else{
-                    clients.put("business_type","");
-                }
-
-                if(loan_amount.getText().toString() != null){
-                    clients.put("loan_amount",loan_amount.getText().toString());
-                }else{
-                    clients.put("loan_amount","");
-                }
-
-                if(about.getText().toString() !=null){
-                    clients.put("about",about.getText().toString());
-                }else{
-                    clients.put("about","");
-                }
-
-                clients.put("eventName",eventName);
-                clients.put("isSaved", true);
-                clients.pinInBackground();
-                clients.saveEventually();
-                Intent intent = new Intent(MainActivity.this, DataViewActivity.class);
-                intent.putExtra("eventName",eventName);
-                startActivity(intent);
-                finish();
             }
         });
         btnSubmit.setEnabled(true);
@@ -202,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
     // add items into spinner dynamically
     public void addItemsOnSpinner2() {
 
-        business_type = (Spinner) findViewById(R.id.editText6);
+        business_type = (Spinner) findViewById(R.id.business_type);
         List<String> list = new ArrayList<String>();
         String[] business_type1 = new String[]{"Select Industry Type","Agriculture","ACs and Refrigerators","Automobiles","Books, Office Supplies Stationery",
         "Cement","Chemicals","Computers","Construction","Consumer Electronics","Containers and Packaging",
@@ -225,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addListenerOnSpinnerItemSelection() {
-        business_type = (Spinner) findViewById(R.id.editText6);
+        business_type = (Spinner) findViewById(R.id.business_type);
 //        business_type.setOnItemSelectedListener(new CustomOnItemSelectedListener());
     }
 
@@ -250,4 +311,15 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private boolean checkValidation() {
+        boolean ret = true;
+
+        if (!Validation.hasText(client_name)) ret = false;
+        if (!Validation.isEmailAddress(client_email, false)) ret = false;
+        if (!Validation.isPhoneNumber(mobile_num, true)) ret = false;
+
+        return ret;
+    }
 }
+

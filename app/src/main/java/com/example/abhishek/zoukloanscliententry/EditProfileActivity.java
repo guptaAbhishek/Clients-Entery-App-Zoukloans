@@ -39,14 +39,14 @@ public class EditProfileActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
-        client_name = (EditText) findViewById(R.id.editText);
-        mobile_num = (EditText) findViewById(R.id.editText2);
-        client_email = (EditText) findViewById(R.id.editText3);
-        client_pan = (EditText) findViewById(R.id.editText4);
-        company_name = (EditText) findViewById(R.id.editText5);
-        loan_amount = (EditText) findViewById(R.id.editText7);
-        about = (EditText) findViewById(R.id.editText8);
-        business_type = (Spinner) findViewById(R.id.editText6);
+        client_name = (EditText) findViewById(R.id.client_name);
+        mobile_num = (EditText) findViewById(R.id.mobile_num);
+        client_email = (EditText) findViewById(R.id.client_email);
+        client_pan = (EditText) findViewById(R.id.client_pan);
+        company_name = (EditText) findViewById(R.id.company_name);
+        loan_amount = (EditText) findViewById(R.id.loan_amount);
+        about = (EditText) findViewById(R.id.about);
+        business_type = (Spinner) findViewById(R.id.business_type);
 
         // Receiving
         Intent intent = getIntent();

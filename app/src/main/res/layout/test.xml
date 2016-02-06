@@ -11,10 +11,7 @@
         android:paddingTop="56dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
-
-        <ImageView
-            android:layout_marginTop="10dp"
-            android:src="@drawable/logo_blue"
+        <ImageView android:src="@drawable/logo_blue"
             android:layout_width="wrap_content"
             android:layout_height="72dp"
             android:layout_marginBottom="24dp"
@@ -84,15 +81,6 @@
                 android:hint="Company Name" />
         </android.support.design.widget.TextInputLayout>
 
-        <!-- Industry Type-->
-
-            <Spinner
-                android:id="@+id/business_type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="12dp">
-            </Spinner>
-
         <!-- Loan Amount-->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -132,6 +120,11 @@
             android:background="@color/colorAccent"
             android:textColor="#fff"
             android:text="Create Account"/>
+
+
+
+
+
 
     </LinearLayout>
 </ScrollView>
