@@ -2,6 +2,7 @@ package com.example.abhishek.zoukloanscliententry;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -60,19 +61,32 @@ public class MainActivity extends AppCompatActivity {
         eventName = eventNameIntnet.getExtras().getString("eventName");
         Log.d("Event Name", " = " + eventName);
 
+        Typeface robotLight = Typeface.createFromAsset(getAssets(),"fonts/robot_light.ttf");
+        Typeface robotMedium = Typeface.createFromAsset(getAssets(),"fonts/robot_medium.ttf");
+        Typeface robotRegular = Typeface.createFromAsset(getAssets(),"fonts/robot_regular.ttf");
+        Typeface robotBold = Typeface.createFromAsset(getAssets(),"fonts/robot_bold.ttf");
+
 //        Getting the value of the admin
         SharedPreferences settings = PreferenceManager
                 .getDefaultSharedPreferences(MainActivity.this);
         assinged_by=settings.getString("assined_by","");
-        btnSubmit = (Button) findViewById(R.id.btnSubmit);
 
+        btnSubmit = (Button) findViewById(R.id.btnSubmit);
+        btnSubmit.setTypeface(robotMedium);
         client_name = (EditText) findViewById(R.id.client_name);
+        client_name.setTypeface(robotLight);
         mobile_num = (EditText) findViewById(R.id.mobile_num);
+        mobile_num.setTypeface(robotLight);
         client_email = (EditText) findViewById(R.id.client_email);
+        client_email.setTypeface(robotLight);
         client_pan = (EditText) findViewById(R.id.client_pan);
+        client_pan.setTypeface(robotLight);
         company_name = (EditText) findViewById(R.id.company_name);
+        company_name.setTypeface(robotLight);
         loan_amount = (EditText) findViewById(R.id.loan_amount);
+        loan_amount.setTypeface(robotLight);
         about = (EditText) findViewById(R.id.about);
+        about.setTypeface(robotLight);
 
 
 

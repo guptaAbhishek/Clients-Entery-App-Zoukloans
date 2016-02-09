@@ -25,7 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/client_name"
+            <EditText
+                android:id="@+id/client_name"
+                android:textSize="16sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
@@ -38,7 +40,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/mobile_num"
+            <EditText
+                android:textSize="16sp"
+                android:id="@+id/mobile_num"
                 android:maxLength="11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,7 +56,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/client_email"
+            <EditText
+                android:textSize="16sp"
+                android:id="@+id/client_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
@@ -65,7 +71,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/client_pan"
+            <EditText
+                android:textSize="16sp"
+                android:id="@+id/client_pan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
@@ -78,7 +86,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/company_name"
+            <EditText
+                android:textSize="16sp"
+                android:id="@+id/company_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
@@ -100,7 +110,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/loan_amount"
+            <EditText
+                android:textSize="16sp"
+                android:id="@+id/loan_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -113,7 +125,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/about"
+            <EditText
+                android:textSize="16sp"
+                android:id="@+id/about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
@@ -132,7 +146,8 @@
             android:padding="12dp"
             android:background="@color/colorAccent"
             android:textColor="#fff"
-            android:text="Create Account"/>
+            android:textSize="14sp"
+            android:text="CREATE LEAD"/>
 
     </LinearLayout>
 </ScrollView>

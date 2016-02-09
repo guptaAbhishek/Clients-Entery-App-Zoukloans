@@ -1,6 +1,7 @@
 package com.example.abhishek.zoukloanscliententry;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,8 +29,16 @@ public class AddFolderNameActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Typeface robotLight = Typeface.createFromAsset(getAssets(),"fonts/robot_light.ttf");
+        Typeface robotMedium = Typeface.createFromAsset(getAssets(),"fonts/robot_medium.ttf");
+        Typeface robotRegular = Typeface.createFromAsset(getAssets(),"fonts/robot_regular.ttf");
+        Typeface robotBold = Typeface.createFromAsset(getAssets(),"fonts/robot_bold.ttf");
+
+
         eventName = (EditText) findViewById(R.id.eventName);
+        eventName.setTypeface(robotLight);
         btnAddEventName = (Button) findViewById(R.id.addEvents);
+        btnAddEventName.setTypeface(robotMedium);
 
         btnAddEventName.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,8 +47,6 @@ public class AddFolderNameActivity extends AppCompatActivity {
                 if(checkValidation()){
                     if(eventName.getText().toString() != null){
                         events.put("eventName",eventName.getText().toString());
-                    }else {
-                        events.put("eventName", "Unknown");
                     }
                     events.put("isSaved",true);
                     events.pinInBackground();

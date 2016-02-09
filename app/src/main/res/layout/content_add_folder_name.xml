@@ -39,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/eventName"
+            android:textSize="16sp"
             android:layout_below="@+id/textView3"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -55,8 +56,9 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
         android:padding="12dp"
+        android:textSize="14sp"
         android:background="@color/colorAccent"
         android:textColor="#fff"
-        android:text="Create Event"/>
+        android:text="CREATE EVENT"/>
     </LinearLayout>
 </ScrollView>

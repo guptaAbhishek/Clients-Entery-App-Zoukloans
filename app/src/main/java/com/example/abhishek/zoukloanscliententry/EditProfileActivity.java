@@ -1,6 +1,7 @@
 package com.example.abhishek.zoukloanscliententry;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -40,14 +41,29 @@ public class EditProfileActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Typeface robotLight = Typeface.createFromAsset(getAssets(),"fonts/robot_light.ttf");
+        Typeface robotMedium = Typeface.createFromAsset(getAssets(),"fonts/robot_medium.ttf");
+        Typeface robotRegular = Typeface.createFromAsset(getAssets(),"fonts/robot_regular.ttf");
+        Typeface robotBold = Typeface.createFromAsset(getAssets(),"fonts/robot_bold.ttf");
+
+
+
         btnSubmit = (Button) findViewById(R.id.btnSubmit);
+        btnSubmit.setTypeface(robotMedium);
         client_name = (EditText) findViewById(R.id.client_name);
+        client_name.setTypeface(robotLight);
         mobile_num = (EditText) findViewById(R.id.mobile_num);
+        mobile_num.setTypeface(robotLight);
         client_email = (EditText) findViewById(R.id.client_email);
+        client_email.setTypeface(robotLight);
         client_pan = (EditText) findViewById(R.id.client_pan);
+        client_pan.setTypeface(robotLight);
         company_name = (EditText) findViewById(R.id.company_name);
+        company_name.setTypeface(robotLight);
         loan_amount = (EditText) findViewById(R.id.loan_amount);
+        loan_amount.setTypeface(robotLight);
         about = (EditText) findViewById(R.id.about);
+        loan_amount.setTypeface(robotLight);
         business_type = (Spinner) findViewById(R.id.business_type);
 
         addItemsOnSpinner2();

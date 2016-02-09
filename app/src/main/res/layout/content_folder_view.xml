@@ -48,8 +48,9 @@
                 <Button
                     android:layout_weight=".5"
                     android:id="@+id/addEvents"
-                    android:text="Add Events"
+                    android:text="ADD EVENTS"
                     android:textColor="#fff"
+                    android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#fbc02d"/>
@@ -58,7 +59,8 @@
                     android:layout_weight=".5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Add Deals"
+                    android:text="ADD DEAL"
+                    android:textSize="14sp"
                     android:textColor="#fff"
                     android:id="@+id/addDeals"
                     android:background="#fbc02d"/>

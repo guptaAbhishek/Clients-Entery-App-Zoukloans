@@ -83,7 +83,6 @@ public class DataViewActivity extends AppCompatActivity {
                         blankView.setVisibility(View.VISIBLE);
                     }
 
-
                     ParseAdapter adapter1 = new ParseAdapter(getApplicationContext(), list1);
                     Log.d("Clients Data", "list data " + list1);
                     dataList.setAdapter(adapter1);

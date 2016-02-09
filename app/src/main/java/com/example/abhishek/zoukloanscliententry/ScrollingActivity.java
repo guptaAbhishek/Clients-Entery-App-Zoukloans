@@ -1,6 +1,7 @@
 package com.example.abhishek.zoukloanscliententry;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -41,13 +42,26 @@ public class ScrollingActivity extends AppCompatActivity {
         Log.d("objectId", "=" + objectId);
         Log.d("eventName","= "+eventName);
 
+
+        Typeface robotLight = Typeface.createFromAsset(getAssets(),"fonts/robot_light.ttf");
+        Typeface robotMedium = Typeface.createFromAsset(getAssets(),"fonts/robot_medium.ttf");
+        Typeface robotRegular = Typeface.createFromAsset(getAssets(),"fonts/robot_regular.ttf");
+        Typeface robotBold = Typeface.createFromAsset(getAssets(),"fonts/robot_bold.ttf");
+
         phoneNumber =(TextView) findViewById(R.id.tvNumber1);
+        phoneNumber.setTypeface(robotLight);
         callButton = (Button) findViewById(R.id.callButton);
+        callButton.setTypeface(robotMedium);
         userName  = (TextView) findViewById(R.id.userName);
+        userName.setTypeface(robotLight);
         email = (TextView) findViewById(R.id.tvNumber3);
+        email.setTypeface(robotLight);
         companyName = (TextView) findViewById(R.id.company_name);
+        companyName.setTypeface(robotLight);
         loanAmount = (TextView) findViewById(R.id.loanAmount);
+        loanAmount.setTypeface(robotLight);
         industryType = (TextView) findViewById(R.id.industryName);
+        industryType.setTypeface(robotLight);
 
 
 
@@ -115,6 +129,7 @@ public class ScrollingActivity extends AppCompatActivity {
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("Call Button","clicked");
                 phoneTxt = phoneNumber.getText().toString();
                 Intent phoneIntent = new Intent(Intent.ACTION_CALL);
                 phoneIntent.setData(Uri.parse("tel:"+phoneTxt));

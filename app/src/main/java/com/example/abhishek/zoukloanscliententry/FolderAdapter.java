@@ -1,6 +1,7 @@
 package com.example.abhishek.zoukloanscliententry;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,7 @@ public class FolderAdapter extends ArrayAdapter<ParseObject> {
         }
         // Lookup view for data population
         TextView eventName = (TextView) convertView.findViewById(R.id.eventName);
+
         // Populate the data into the template view using the data object
         if(events!=null){
             eventName.setText(events.getString("eventName"));
