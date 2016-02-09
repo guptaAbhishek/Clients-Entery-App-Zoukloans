@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
+            android:label="Add Deal"
             android:parentActivityName=".DataViewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -45,11 +45,7 @@
             android:name=".FolderViewActivity"
             android:label="@string/title_activity_folder_view"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".AddFolderNameActivity"
@@ -61,10 +57,22 @@
             android:parentActivityName=".DataViewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:parentActivityName=".DataViewActivity"
             android:name=".ScrollingActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName=".DataViewActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SplashScreen"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>
