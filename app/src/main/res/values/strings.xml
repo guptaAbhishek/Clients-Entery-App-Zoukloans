@@ -2,48 +2,6 @@
     <string name="app_name">Zoukloans Client Entry</string>
     <string name="action_settings">Settings</string>
     <string name="business_prompt">Chosse an Business Type</string>
-    <string-array name="business_type">
-        <item>Agriculture</item>
-        <item>ACs and Refrigerators</item>
-        <item>Automobiles</item>
-        <item>Books, Office Supplies Stationery</item>
-        <item>Cement</item>
-        <item>Chemicals</item>
-        <item>Computers</item>
-        <item>Construction</item>
-        <item>Consumer Electronics</item>
-        <item>Containers and Packaging</item>
-        <item>Durables</item>
-        <item>Electronics</item>
-        <item>Entertainment and Leisure</item>
-        <item>Financial Services</item>
-        <item>FMCG</item>
-        <item>Food and Beverages</item>
-        <item>Food Processing</item>
-        <item>Food Products</item>
-        <item>Glass and Glass Products</item>
-        <item>Granite / Marbles</item>
-        <item>Healthcare</item>
-        <item>Home Furniture and Furnishing</item>
-        <item>Household Products</item>
-        <item>Industrial Equipment</item>
-        <item>Jewellery</item>
-        <item>Luggage and Leather Goods</item>
-        <item>Media</item>
-        <item>Metals</item>
-        <item>Paints</item>
-        <item>Paper</item>
-        <item>Petroleum Products</item>
-        <item>Photographic and Allied Products</item>
-        <item>Plastics</item>
-        <item>Professional Services</item>
-        <item>Rubber</item>
-        <item>Specialty (Clock, Watches, Footwear, Toys and Games, Optical Instruments, Sports Goods)</item>
-        <item>Television broadcasting media</item>
-        <item>Textiles</item>
-        <item>Transportation Logistics</item>
-        <item>Wood and Wood Products</item>
-    </string-array>
     <string name="title_activity_data_view">Clients Data</string>
     <string name="title_activity_starting">Welcome </string>
     <string name="title_activity_edit_profile">Edit Client</string>
@@ -57,6 +15,6 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="title_activity_scrolling"></string>
 
 </resources>

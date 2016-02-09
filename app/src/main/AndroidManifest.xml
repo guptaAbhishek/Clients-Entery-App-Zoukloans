@@ -61,6 +61,7 @@
             android:parentActivityName=".DataViewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:parentActivityName=".DataViewActivity"
             android:name=".ScrollingActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar"></activity>
